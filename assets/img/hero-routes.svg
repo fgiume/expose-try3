@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-label="Declared shipping routes versus the hidden routes that sanctions evaders use">
+  <title>Declared routes versus hidden routes</title>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#1f8fd6" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#1f8fd6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#8fb8e8" opacity=".35"/>
+    </pattern>
+    <clipPath id="disc"><circle cx="360" cy="260" r="270"/></clipPath>
+    <style>
+      .flow{stroke-dasharray:7 9;animation:dash 2.4s linear infinite}
+      @keyframes dash{to{stroke-dashoffset:-64}}
+      .pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.6s ease-out infinite}
+      @keyframes pulse{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.6);opacity:0}}
+      text{font-family:Inter,Segoe UI,Arial,sans-serif;font-size:12px;fill:#cfe0f7;letter-spacing:.08em}
+    </style>
+  </defs>
+  <circle cx="360" cy="260" r="300" fill="url(#glow)"/>
+  <g clip-path="url(#disc)"><rect width="720" height="520" fill="url(#dots)"/></g>
+  <g fill="none" stroke="#8fb8e8" stroke-opacity=".18">
+    <circle cx="360" cy="260" r="270"/><circle cx="360" cy="260" r="190"/><circle cx="360" cy="260" r="110"/>
+  </g>
+
+  <!-- declared route (solid) -->
+  <path d="M110 340 C 210 400, 400 420, 520 400" fill="none" stroke="#2ec4b6" stroke-width="3" stroke-linecap="round"/>
+  <path d="M520 400 C 600 370, 620 300, 600 230" fill="none" stroke="#2ec4b6" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- real route (dashed, animated) -->
+  <path class="flow" d="M110 340 C 120 240, 180 170, 250 150" fill="none" stroke="#ffb020" stroke-width="3" stroke-linecap="round"/>
+  <path class="flow" d="M250 150 C 310 90, 380 80, 430 110" fill="none" stroke="#ffb020" stroke-width="3" stroke-linecap="round"/>
+  <path class="flow" d="M430 110 C 500 130, 570 170, 600 230" fill="none" stroke="#ffb020" stroke-width="3" stroke-linecap="round"/>
+  <path class="flow" d="M250 150 C 270 260, 290 360, 300 430" fill="none" stroke="#ffb020" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+
+  <!-- nodes -->
+  <g>
+    <circle class="pulse" cx="110" cy="340" r="9" fill="#2ec4b6"/><circle cx="110" cy="340" r="9" fill="#0a1a33" stroke="#2ec4b6" stroke-width="3"/>
+    <text x="52" y="372">LOADING PORT</text>
+  </g>
+  <g>
+    <circle class="pulse" cx="250" cy="150" r="9" fill="#ffb020"/><circle cx="250" cy="150" r="9" fill="#0a1a33" stroke="#ffb020" stroke-width="3"/>
+    <text x="196" y="128">AIS SWITCHED OFF</text>
+  </g>
+  <g>
+    <circle class="pulse" cx="430" cy="110" r="9" fill="#ffb020"/><circle cx="430" cy="110" r="9" fill="#0a1a33" stroke="#ffb020" stroke-width="3"/>
+    <text x="378" y="88">SHIP-TO-SHIP AT SEA</text>
+  </g>
+  <g>
+    <circle class="pulse" cx="600" cy="230" r="9" fill="#ffb020"/><circle cx="600" cy="230" r="9" fill="#0a1a33" stroke="#ffb020" stroke-width="3"/>
+    <text x="500" y="262">REAL DESTINATION</text>
+  </g>
+  <g>
+    <circle cx="520" cy="400" r="9" fill="#0a1a33" stroke="#2ec4b6" stroke-width="3"/>
+    <text x="448" y="432">DECLARED PORT</text>
+  </g>
+  <g>
+    <circle cx="300" cy="430" r="7" fill="#0a1a33" stroke="#8fb8e8" stroke-width="3"/>
+    <text x="236" y="458">SHELL COMPANY</text>
+  </g>
+
+  <!-- vessel icon -->
+  <g transform="translate(330 262)" fill="#f4f7fc">
+    <path d="M-34 0H34L24 16H-24Z"/><path d="M-10 0V-12H12V0M0-12V-20" fill="none" stroke="#f4f7fc" stroke-width="3"/>
+    <path d="M-40 26q10-8 20 0t20 0t20 0t20 0" fill="none" stroke="#5fb4f0" stroke-width="3"/>
+  </g>
+
+  <!-- legend -->
+  <g transform="translate(28 28)">
+    <line x1="0" y1="6" x2="34" y2="6" stroke="#2ec4b6" stroke-width="3"/><text x="44" y="10">DECLARED ROUTE</text>
+    <line class="flow" x1="0" y1="30" x2="34" y2="30" stroke="#ffb020" stroke-width="3"/><text x="44" y="34">ACTUAL ROUTE</text>
+  </g>
+</svg>

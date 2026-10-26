@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evasion types – EXPOSE</title>
+  <meta name="description" content="How EXPOSE classifies the sanctions evasion documented by UN Panels of Experts.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="types">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="EXPOSE home"><img src="assets/logo.svg" alt="EXPOSE"></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu">&#9776; Menu</button>
+      <ul id="menu" class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="evasion-types.html" aria-current="page">Evasion types</a></li>
+        <li><a href="database.html">Database</a></li>
+        <li><a href="countries.html">Countries</a></li>
+        <li class="cta"><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <div class="tagline">EXPOSE &middot; Experts Panels on Sanctions Evasion</div>
+        <h1>Evasion types and method</h1>
+        <p class="lead">What Panels of Experts are, which sanctions regimes we cover, and how we sort what they found.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split">
+        <div class="reveal">
+          <span class="eyebrow">Background</span>
+          <h2>What is a Panel of Experts?</h2>
+          <p>When the UN Security Council imposes sanctions, it often creates a sanctions committee and appoints a <strong>Panel of Experts</strong> to assist it. The Panel gathers information, investigates reported violations, and publishes reports with findings and recommendations.</p>
+          <p>Those reports are the evidence base for EXPOSE. They frequently describe in detail how arms embargoes, commodity bans and financial restrictions are circumvented, and they often note that some Member States are not implementing the measures fully.</p>
+        </div>
+        <div class="reveal">
+          <img class="rounded" src="assets/img/cyber-wallets.svg" alt="Illustration: stolen funds moving through many wallets before being cashed out" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Our method</span>
+          <h2>How cases are classified</h2>
+          <!-- Edit these four steps to match your actual coding procedure -->
+        </div>
+        <div class="steps">
+          <div class="step reveal"><h3>Collect</h3><p>Gather the published final and mid-term reports of the Panels for each sanctions regime.</p></div>
+          <div class="step reveal"><h3>Identify</h3><p>Read each report and mark every passage that describes an evasion of the sanctions measures.</p></div>
+          <div class="step reveal"><h3>Classify</h3><p>Code each case by regime, year and one or more evasion categories.</p></div>
+          <div class="step reveal"><h3>Publish</h3><p>Add the case, its source and a short summary to the database.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">The eight categories</span>
+          <h2>Evasion types explained</h2>
+          <p class="lead">Open a category to see what it covers, then jump to its cases. One case can belong to several categories.</p>
+        </div>
+        <div id="acc" class="acc"></div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Coverage</span>
+          <h2>Sanctions regimes in the database</h2>
+        </div>
+        <div id="regimes" class="regimes"></div>
+        <p class="placeholder-note" style="margin-top:1.4rem">Context: the DPRK Panel of Experts is no longer active. Its mandate was not renewed in 2024, so its earlier reports remain the main public record for that regime.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Sources</span>
+          <h2>Where the sample cases come from</h2>
+          <p class="lead">Reports and articles used to compile the cases currently in the database.</p>
+        </div>
+        <ul id="sources" class="sources"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="foot">
+        <div><img src="assets/logo.svg" alt="EXPOSE"><p>Experts Panels on Sanctions Evasion. A research project by Ana, Francesco and Irene, University of Groningen.</p></div>
+        <div><h4>Explore</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About us</a></li><li><a href="evasion-types.html">Evasion types</a></li><li><a href="database.html">Database</a></li>
+        <li><a href="countries.html">Countries</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4>Sources</h4><p style="font-size:.9rem">Cases are compiled from UN Panel of Experts reports and public reporting on them. Always check the original UN documents.</p></div>
+      </div>
+      <div class="legal"><span>&copy; <span data-year></span> EXPOSE project</span><span>Not an official UN website.</span></div>
+    </div>
+  </footer>
+
+  <script src="data/cases.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+  (function () {
+    var D = window.EXPOSE_DATA;
+    var acc = document.getElementById("acc");
+    D.categories.forEach(function (cat) {
+      var list = D.cases.filter(function (c) { return c.categories.indexOf(cat.id) > -1; });
+      var d = document.createElement("details");
+      d.style.setProperty("--c", cat.color);
+      var s = document.createElement("summary");
+      s.innerHTML = "<span class='tag'></span><span class='t'></span>";
+      s.querySelector(".tag").style.setProperty("--c", cat.color);
+      s.querySelector(".tag").textContent = list.length + (list.length === 1 ? " case" : " cases");
+      s.querySelector(".t").textContent = cat.label;
+      var b = document.createElement("div"); b.className = "body";
+      var p = document.createElement("p"); p.textContent = cat.blurb; b.appendChild(p);
+      if (list.length) {
+        var ul = document.createElement("ul");
+        list.slice(0, 4).forEach(function (c) { var li = document.createElement("li"); li.textContent = c.title + " (" + c.year + ")"; ul.appendChild(li); });
+        b.appendChild(ul);
+      }
+      var a = document.createElement("a"); a.className = "btn btn-dark btn-sm"; a.href = "database.html?cat=" + cat.id; a.textContent = "See these cases →"; b.appendChild(a);
+      d.appendChild(s); d.appendChild(b); acc.appendChild(d);
+    });
+
+    var rg = document.getElementById("regimes");
+    D.regimes.forEach(function (r) {
+      var n = D.cases.filter(function (c) { return c.regime === r.id; }).length;
+      var div = document.createElement("div"); div.className = "regime";
+      div.innerHTML = "<h3></h3><small></small><p style='margin:.7rem 0 .8rem;font-weight:700'></p><a class='btn btn-outline btn-sm'>Filter database</a>";
+      div.querySelector("h3").textContent = r.label;
+      div.querySelector("small").textContent = r.res;
+      div.querySelector("p").textContent = n + " cases";
+      div.querySelector("a").href = "database.html?regime=" + r.id;
+      rg.appendChild(div);
+    });
+
+    var seen = {}, src = document.getElementById("sources");
+    D.cases.forEach(function (c) {
+      if (seen[c.sourceUrl]) return; seen[c.sourceUrl] = 1;
+      var li = document.createElement("li"), a = document.createElement("a");
+      a.href = c.sourceUrl; a.target = "_blank"; a.rel = "noopener"; a.textContent = c.sourceTitle;
+      li.appendChild(a); src.appendChild(li);
+    });
+  })();
+  </script>
+</body>
+</html>

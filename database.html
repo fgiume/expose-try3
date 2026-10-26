@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database – EXPOSE</title>
+  <meta name="description" content="Filter classified cases of UN sanctions evasion documented by the Panels of Experts.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="database">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="EXPOSE home"><img src="assets/logo.svg" alt="EXPOSE"></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu">&#9776; Menu</button>
+      <ul id="menu" class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="evasion-types.html">Evasion types</a></li>
+        <li><a href="database.html" aria-current="page">Database</a></li>
+        <li class="cta"><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <div class="tagline">EXPOSE &middot; Experts Panels on Sanctions Evasion</div>
+        <h1>The evasion database</h1>
+        <p class="lead">Choose one or more categories and only the matching cases are shown. With nothing selected, every case is listed.</p>
+      </div>
+    </section>
+
+    <section style="padding-top:2.4rem">
+      <div class="container">
+        <div class="notice"><strong>About this data.</strong> These entries are compiled from public reporting on UN Panel of Experts reports and are meant as a working sample. The &ldquo;indicator&rdquo; lines are analyst notes, not quotations from the reports. Check each case against the original UN document before citing it. To load the project's full coded dataset, edit <code>data/cases.js</code>.</div>
+
+        <div class="db-layout">
+          <aside class="filters" aria-label="Filters">
+            <h3>Search</h3>
+            <div class="field"><label for="q" class="label">Keyword</label><input id="q" type="text" placeholder="e.g. AIS, charcoal, crypto" autocomplete="off"></div>
+
+            <h3>Category</h3>
+            <div id="chips" class="chips" role="group" aria-label="Evasion categories"></div>
+
+            <h3>When several are selected, show cases that match</h3>
+            <div id="mode" class="seg" role="group" aria-label="Match mode">
+              <button type="button" data-mode="any" aria-pressed="true">Any</button>
+              <button type="button" data-mode="all" aria-pressed="false">All</button>
+            </div>
+
+            <h3>Sanctions regime</h3>
+            <select id="regime" aria-label="Sanctions regime"><option value="">All regimes</option></select>
+
+            <h3>Year</h3>
+            <select id="year" aria-label="Year"><option value="">All years</option></select>
+
+            <div class="row">
+              <button id="clear" class="btn btn-outline btn-sm" type="button" style="flex:1">Clear filters</button>
+            </div>
+          </aside>
+
+          <div>
+            <div class="minichart">
+              <h4>Categories in the current results</h4>
+              <div id="chart"></div>
+            </div>
+
+            <div class="results-bar">
+              <span id="count" class="count" aria-live="polite"></span>
+              <span style="display:flex;gap:.6rem;align-items:center;flex-wrap:wrap">
+                <label for="sort" class="label" style="margin:0">Sort by</label>
+                <select id="sort" style="width:auto">
+                  <option value="year-desc">Newest first</option>
+                  <option value="year-asc">Oldest first</option>
+                  <option value="regime">Regime</option>
+                  <option value="title">Title A&ndash;Z</option>
+                </select>
+                <button id="csv" class="btn btn-dark btn-sm" type="button">Download CSV</button>
+              </span>
+            </div>
+            <div id="active" class="active-filters" aria-label="Active filters"></div>
+            <div id="cases" class="cases"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="foot">
+        <div><img src="assets/logo.svg" alt="EXPOSE"><p>Experts Panels on Sanctions Evasion. A research project by Ana, Francesco and Irene, University of Groningen.</p></div>
+        <div><h4>Explore</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About us</a></li><li><a href="evasion-types.html">Evasion types</a></li><li><a href="database.html">Database</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4>Sources</h4><p style="font-size:.9rem">Cases are compiled from UN Panel of Experts reports and public reporting on them. Always check the original UN documents.</p></div>
+      </div>
+      <div class="legal"><span>&copy; <span data-year></span> EXPOSE project</span><span>Not an official UN website.</span></div>
+    </div>
+  </footer>
+
+  <script src="data/cases.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/database.js"></script>
+</body>
+</html>

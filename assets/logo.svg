@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 345 90" role="img" aria-label="EXPOSE logo">
+  <title>EXPOSE</title>
+  <!-- Mark: a lens that exposes a vessel whose AIS signal is hidden -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="45" cy="42" r="30" stroke="#f4f7fc" stroke-width="6"/>
+    <path d="M66 63 L84 81" stroke="#ffb020" stroke-width="9"/>
+    <path d="M24 46H66L58 58H32Z" fill="#f4f7fc" stroke="none"/>
+    <path d="M38 46V36H50V46M44 36V30" stroke="#f4f7fc" stroke-width="3.5"/>
+    <path d="M36 25a13 13 0 0 1 18 0" stroke="#ffb020" stroke-width="3" stroke-dasharray="3 4"/>
+    <path d="M30 19a21 21 0 0 1 30 0" stroke="#ffb020" stroke-width="3" stroke-dasharray="3 5" opacity=".6"/>
+    <path d="M22 66q5.5-5 11 0t11 0t11 0t11 0" stroke="#5fb4f0" stroke-width="3"/>
+  </g>
+  <!-- Wordmark: geometric letters; the X is a crosshair lens -->
+  <g fill="none" stroke="#f4f7fc" stroke-width="7" stroke-linejoin="miter">
+    <path d="M131 22H108V62H131M108 42H127"/>
+    <path d="M146 22L168 62M168 22L146 62"/>
+    <path d="M184 62V22H197A10.5 10.5 0 0 1 197 43H184"/>
+    <ellipse cx="232" cy="42" rx="10" ry="17.5"/>
+    <path d="M286 30C284 22 262 20 263 32C264 42 286 42 286 52C286 64 263 62 261 53"/>
+    <path d="M326 22H303V62H326M303 42H322"/>
+  </g>
+  <g fill="none" stroke="#ffb020" stroke-width="4">
+    <circle cx="157" cy="42" r="10.5"/>
+  </g>
+  <circle cx="157" cy="42" r="2.6" fill="#ffb020"/>
+</svg>

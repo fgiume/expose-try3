@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="A traditional dhow sailing at dusk">
+  <title>Dhow at dusk</title>
+  <defs>
+    <linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b2a5c"/><stop offset=".55" stop-color="#d9566a"/><stop offset="1" stop-color="#ffb347"/>
+    </linearGradient>
+    <linearGradient id="sea2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7a3d6e"/><stop offset="1" stop-color="#101a3a"/>
+    </linearGradient>
+    <style>
+      .rock{transform-box:fill-box;transform-origin:50% 100%;animation:rock 5s ease-in-out infinite alternate}
+      @keyframes rock{from{transform:rotate(-2deg)}to{transform:rotate(2deg)}}
+      text{font-family:Inter,Segoe UI,Arial,sans-serif;font-size:12px;fill:#fff;letter-spacing:.08em}
+    </style>
+  </defs>
+  <rect width="640" height="400" fill="url(#dusk)"/>
+  <circle cx="470" cy="236" r="52" fill="#fff0b8"/>
+  <rect y="250" width="640" height="150" fill="url(#sea2)"/>
+  <rect x="418" y="258" width="104" height="5" fill="#fff0b8" opacity=".5" rx="2"/>
+  <rect x="432" y="272" width="76" height="4" fill="#fff0b8" opacity=".35" rx="2"/>
+  <g class="rock">
+    <!-- lateen sails -->
+    <path d="M300 90L150 250H300Z" fill="#f7ead2"/>
+    <path d="M312 120L430 250H312Z" fill="#e9d3a8"/>
+    <path d="M304 80V250" stroke="#3b2a1a" stroke-width="5"/>
+    <path d="M150 250L304 80" stroke="#3b2a1a" stroke-width="3"/>
+    <!-- hull -->
+    <path d="M90 250H520Q500 300 440 308H170Q120 300 90 250Z" fill="#3b2a1a"/>
+    <path d="M90 250H520L514 262H98Z" fill="#c1121f"/>
+    <path d="M520 250L560 224" stroke="#3b2a1a" stroke-width="6" stroke-linecap="round"/>
+    <!-- cargo -->
+    <g fill="#8a6a3c"><rect x="340" y="226" width="44" height="24"/><rect x="388" y="232" width="34" height="18"/></g>
+  </g>
+  <g fill="none" stroke="#ffd9a8" stroke-width="3" stroke-linecap="round" opacity=".6">
+    <path d="M0 330q20-9 40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0"/>
+    <path d="M-30 366q20-9 40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0"/>
+  </g>
+  <text x="24" y="378">ARABIAN SEA</text>
+</svg>
